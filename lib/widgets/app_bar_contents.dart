@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 import 'package:steward/constants/constants.dart';
 import 'package:steward/utils/utils.dart';
 
@@ -41,7 +42,7 @@ class _AppBarContentsState extends State<AppBarContents> {
           ),
         ],
       ),
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+      padding: EdgeInsets.symmetric(horizontal: 1.w, vertical: 2.h),
       child: Expanded(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -69,6 +70,39 @@ class _AppBarContentsState extends State<AppBarContents> {
                     maintainState: true,
                     maintainSize: true,
                     visible: _isHovering[0],
+                    child: Container(
+                      height: 2,
+                      width: 20,
+                      color: blueAppBar41,
+                    ),
+                  )
+                ],
+              ),
+            ),
+            addHorizontalSpace(2.w),
+            InkWell(
+              onHover: (value) {
+                setState(() {
+                  value ? _isHovering[1] = true : _isHovering[1] = false;
+                });
+              },
+              onTap: () {},
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    'History',
+                    style: TextStyle(
+                        color: _isHovering[1] ? blueAppBar : blueAppBar,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16),
+                  ),
+                  const SizedBox(height: 5),
+                  Visibility(
+                    maintainAnimation: true,
+                    maintainState: true,
+                    maintainSize: true,
+                    visible: _isHovering[1],
                     child: Container(
                       height: 2,
                       width: 20,

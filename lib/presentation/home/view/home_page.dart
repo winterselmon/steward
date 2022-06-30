@@ -30,7 +30,7 @@ class _HomePageState extends State<HomePage> {
     return SafeArea(
         child: Scaffold(
       appBar: PreferredSize(
-          preferredSize: Size(width, 15.h), child: const AppBarContents()),
+          preferredSize: Size(width, 10.h), child: const AppBarContents()),
       backgroundColor: whiteColor,
       body: SingleChildScrollView(
         child: SizedBox(
